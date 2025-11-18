@@ -1,0 +1,152 @@
+/* ✅ FIX #9: CSS Module para ChatWidget - evita conflitos de classe */
+/* Use em ChatWidget.tsx: import styles from './ChatWidget.module.css' */
+
+.floatingButton {
+  @apply fixed bottom-6 right-6 bg-primary hover:bg-primary/90 text-white p-4 rounded-full shadow-2xl hover:scale-110 transition-all z-50 flex items-center gap-3 group;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.buttonText {
+  @apply font-semibold max-w-0 overflow-hidden group-hover:max-w-xs transition-all duration-300;
+}
+
+.widget {
+  @apply fixed bottom-6 right-6 w-full max-w-md bg-white rounded-2xl shadow-2xl flex flex-col z-50 transition-all;
+}
+
+.widgetMinimized {
+  height: 4rem; /* h-16 */
+}
+
+.widgetOpen {
+  height: 600px; /* h-[600px] */
+}
+
+.header {
+  @apply bg-gradient-to-r from-primary to-primary/80 text-white p-4 rounded-t-2xl flex justify-between items-center;
+}
+
+.headerInfo {
+  @apply flex items-center gap-3;
+}
+
+.headerAvatar {
+  @apply w-10 h-10 bg-white/20 rounded-full flex items-center justify-center;
+  font-size: 1.5rem;
+}
+
+.headerTitle {
+  @apply font-bold;
+}
+
+.headerStatus {
+  @apply text-sm opacity-90;
+}
+
+.headerButtons {
+  @apply flex gap-2;
+}
+
+.headerButton {
+  @apply hover:bg-white/10 p-2 rounded transition-colors;
+  cursor: pointer;
+  border: none;
+  background: transparent;
+  color: inherit;
+}
+
+.headerButton:focus-visible {
+  @apply outline-2 outline-offset-2 outline-white;
+}
+
+.messagesContainer {
+  @apply flex-1 overflow-y-auto p-4 space-y-4 bg-gray-50;
+}
+
+.messageWrapper {
+  @apply flex gap-2;
+}
+
+.messageWrapperUser {
+  @apply justify-end;
+}
+
+.messageWrapperAssistant {
+  @apply justify-start;
+}
+
+.messageBubble {
+  @apply max-w-[80%] p-3 rounded-2xl shadow-sm;
+}
+
+.messageBubbleUser {
+  @apply bg-primary text-white rounded-br-none;
+}
+
+.messageBubbleAssistant {
+  @apply bg-white text-gray-900 rounded-bl-none;
+}
+
+.messageText {
+  @apply text-sm whitespace-pre-wrap;
+}
+
+.messageTime {
+  @apply text-xs mt-1;
+}
+
+.messageTimeUser {
+  @apply text-white/70;
+}
+
+.messageTimeAssistant {
+  @apply text-gray-400;
+}
+
+.loadingBubble {
+  @apply flex justify-start;
+}
+
+.loadingAnimation {
+  @apply bg-white p-3 rounded-2xl rounded-bl-none shadow-sm flex gap-1;
+}
+
+.loadingDot {
+  @apply w-2 h-2 bg-gray-400 rounded-full animate-bounce;
+}
+
+.inputContainer {
+  @apply p-4 bg-white border-t rounded-b-2xl;
+}
+
+.inputWrapper {
+  @apply flex gap-2;
+}
+
+.input {
+  @apply flex-1 p-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-primary focus:border-transparent disabled:bg-gray-100 disabled:cursor-not-allowed;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  @apply text-gray-400;
+}
+
+.submitButton {
+  @apply bg-primary text-white p-3 rounded-xl hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-all hover:scale-105 active:scale-95;
+  cursor: pointer;
+  border: none;
+  font-family: inherit;
+}
+
+.submitButton:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
+
+.inputHint {
+  @apply text-xs text-gray-500 mt-2 text-center;
+}

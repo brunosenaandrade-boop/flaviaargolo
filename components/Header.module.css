@@ -1,0 +1,72 @@
+/* ✅ FIX #9: CSS Module para Header - evita conflitos de classe */
+/* Use em Header.tsx: import styles from './Header.module.css' */
+
+.header {
+  @apply bg-white/95 backdrop-blur-md shadow-lg sticky top-0 z-50 border-b border-gray-100;
+}
+
+.container {
+  @apply container mx-auto px-4 py-4 flex justify-between items-center;
+}
+
+.logo {
+  @apply flex items-center gap-3 group;
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.logoBox {
+  @apply w-12 h-12 rounded-xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white font-bold shadow-lg;
+  transition: transform 0.3s ease;
+}
+
+.logo:hover .logoBox {
+  @apply scale-110;
+}
+
+.logoText {
+  @apply hidden sm:block;
+}
+
+.logoTitle {
+  @apply text-xl font-bold text-slate-900;
+  transition: color 0.3s ease;
+}
+
+.logo:hover .logoTitle {
+  @apply text-primary;
+}
+
+.logoSubtitle {
+  @apply text-xs text-gray-500 font-semibold;
+}
+
+.nav {
+  @apply hidden md:flex gap-8 items-center;
+}
+
+.navLink {
+  @apply text-gray-700 hover:text-primary font-semibold transition-colors relative group;
+  position: relative;
+  text-decoration: none;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: #D4AF37;
+  transition: width 0.3s ease;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink:focus-visible {
+  @apply outline-2 outline-offset-2 outline-primary;
+}
